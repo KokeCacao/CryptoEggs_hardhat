@@ -3,8 +3,18 @@
 ## Running
 `yarn`
 `yarn hardhat compile`
-`yarn hardhat run scripts/deploy.js --network localhost`
-`yarn hardhat node`
+`yarn hardhat test`
+`yarn hardhat node --hostname 0.0.0.0` (in shell #1 if on server)
+`yarn hardhat node --hostname 127.0.0.1` (in shell #1 if on debug)
+`yarn hardhat run scripts/deploy.js --network localhost` (in shell #2)
+
+Before deploy, you need
+```
+yarn add --save-dev  @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers
+yarn add @nomiclabs/hardhat-etherscan
+yarn add dotenv
+yarn hardhat --network xdai deploy
+```
 
 ## Creation
 Created using: @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
